@@ -10,7 +10,8 @@ $(document).ready(function () {
 
   $("#tweet-text").keyup(function () {
     const value = $(this).val().length;
-    const counter = $("output");
+    // console.log(value);
+    const counter = $(this).parent("form").find("output");
     counter.val(140 - value);
     // /if (counter.val() <= 0) {
     //   counter.addClass("red");

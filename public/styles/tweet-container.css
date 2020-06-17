@@ -8,7 +8,7 @@
 .tweet-container article:hover {
   box-shadow: 10px 10px #cccccc;
 }
-.tweet-container article:hover #ToName {
+.tweet-container article:hover #tweet-recipient {
   visibility: visible;
 }
 
@@ -41,7 +41,7 @@
   font-size: 15px;
 }
 
-#ToName {
+#tweet-recipient {
   color: #cccccc;
   visibility: hidden;
   font-weight: 600;
