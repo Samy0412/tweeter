@@ -65,21 +65,27 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(() => {
-  renderTweets(data);
+  //renderTweets(data);
 
-  $("form").on("submit", (evt) => {
+  $("form").on("submit", function (evt) {
     evt.preventDefault();
-    // How do I get the value of what i typed INTO my search URL?
-    // How do i bundle the data i need to send to the user  ( hint hint serilize? )
+    // const thisObject = $(this);
+    // const data = $(this).serialize();
+    // console.log("thisObject:", thisObject);
+    // console.log("data:", data);
     $.ajax({
-      url: `http://api.tvmaze.com/search/shows?q=${evt.target.search.value}`,
-      method: "GET",
-      dataType: "JSON",
-    }).then(function (response) {
-      console.log(response);
-      // const item = createItem(response[0])
-      $("#results").empty();
-      createItems(response);
-    });
+      url: `/tweets`,
+      method: "POST",
+      // dataType: "JSON",
+      data: $(this).serialize(),
+    })
+      .then(function () {
+        console.log("hurrah");
+        //$("#results").empty();
+        //renderTweets(response);
+      })
+      .catch(function (err) {
+        console.log("err:", err);
+      });
   });
 });
