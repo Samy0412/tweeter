@@ -1,7 +1,9 @@
+.new-tweet {
+  padding-top: 50px;
+}
 .new-tweet form {
   display: flex;
   flex-direction: column;
-  width: 50%;
   height: 200px;
 }
 .new-tweet textarea {

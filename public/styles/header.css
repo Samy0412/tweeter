@@ -1,4 +1,4 @@
-header {
+.main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@ header {
   color: #ffffff;
 }
 
-header h2 {
+.main-header h2 {
   font-weight: 300;
 }
 h2 b {

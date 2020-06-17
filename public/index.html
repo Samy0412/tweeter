@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +48,7 @@
       <span id="new-tweet"><b>Write</b> a new tweet</span>
     </nav>
     <!-- HEADER -->
-    <header>
+    <header class="main-header">
       <!-- avatar -->
       <div>
         <img src="/images/profile-hex.png" />
@@ -58,7 +63,6 @@
     <!-- MAIN CONTENT -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <!-- Form-->
         <form action="/tweets" method="POST">
           <!-- text area to add a new tweet -->
@@ -75,7 +79,32 @@
           </div>
         </form>
       </section>
-      <section id="tweet-container"></section>
+      <section class="tweet-container">
+        <article>
+          <header>
+            <div>
+              <img src="https://i.imgur.com/73hZDYK.png" />
+              <p>Newton</p>
+            </div>
+            <p id="ToName">@Sirlsaac</p>
+          </header>
+          <div id="tweet-display">
+            <p>
+              I have seen further it is by standing on the shoulders of giants
+            </p>
+          </div>
+          <footer>
+            <p>
+              10 days ago
+            </p>
+            <div id="tweet-images">
+              <i class="fa fa-flag" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
     </main>
   </body>
 </html>
