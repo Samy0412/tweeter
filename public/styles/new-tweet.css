@@ -31,3 +31,7 @@
 .new-tweet output {
   font-family: "Bungee", cursive;
 }
+
+.red {
+  color: red;
+}

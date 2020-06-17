@@ -28,15 +28,21 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- TOP NAV BAR(fixed) -->
     <nav>
+      <!-- Top left Tweeter logo -->
       <span id="label">tweeter</span>
+      <!-- Top right "write a tweet" link" -->
       <span id="new-tweet"><b>Write</b> a new tweet</span>
     </nav>
-
+    <!-- HEADER -->
     <header>
       <!-- avatar -->
       <div>
@@ -49,22 +55,27 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
+    <!-- MAIN CONTENT -->
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <!-- Form-->
         <form action="/tweets" method="POST">
+          <!-- text area to add a new tweet -->
           <textarea
             name="text"
             placeholder="What are you humming about?"
             id="tweet-text"
           ></textarea>
+          <!-- Button to add the new tweet -->
           <div>
             <button type="submit">TWEET</button>
+            <!-- Counter -->
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <section id="tweet-container"></section>
     </main>
   </body>
 </html>
