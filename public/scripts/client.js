@@ -44,7 +44,7 @@ const createTweetElement = function (tweet) {
           <img src = "${tweet.user.avatars}"/>
           <p>${tweet.user.name}</p>
         </div>
-        <p id="tweet-recipient">${tweet.user.handle}</p>
+        <p id="handle">${tweet.user.handle}</p>
       </header>
       <div id="tweet-display">
         <p>${escape(tweet.content.text)}</p>

@@ -28,11 +28,28 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 90%;
-  position: relative;
-  left: 5%;
+  width: 90vw;
+  margin: auto;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* Making the page responsive */
+
+@media only screen and (min-width: 1024px) {
+  .responsive-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 90vw;
+    margin: auto;
+    margin-top: 120px;
+  }
+  .main-header {
+    width: 30%;
+  }
+  .container {
+    width: 70%;
+    margin-left: 5em;
+  }
+}

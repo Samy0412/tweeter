@@ -17,20 +17,20 @@ nav {
 }
 
 .label {
-  font-size: 36px;
-  padding-top: 20px;
+  font-size: 1.5em;
+  padding-top: 0.5em;
   font-family: "Bungee", cursive;
 }
 
 .write-tweet span {
-  font-size: 22px;
+  font-size: 1em;
   align-self: center;
 }
 
 .write-tweet div {
-  padding: 10px;
+  padding: 0.5em;
 }
 nav img {
-  height: 20px;
-  width: 20px;
+  height: 0.5em;
+  width: 0.5em;
 }

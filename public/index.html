@@ -3,6 +3,8 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <!-- Disabling viewport Zooming-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link
@@ -54,53 +56,55 @@
         </div>
       </div>
     </nav>
-    <!-- HEADER -->
-    <header class="main-header">
-      <!-- avatar -->
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <!-- name -->
-      <div>
-        <h2><b>Samantha</b> Gadet</h2>
-      </div>
-    </header>
+    <div class= responsive-container>
+      <!-- HEADER -->
+      <header class="main-header">
+        <!-- avatar -->
+        <div>
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <!-- name -->
+        <div>
+          <h2><b>Samantha</b> Gadet</h2>
+        </div>
+      </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
-      <!-- CREATION OF NEW TWEET -->
-      <section class="new-tweet">
-        <!-- Error message -->
-        <div id=error-message>
+      <!-- MAIN CONTENT -->
+      <main class="container">
+        <!-- CREATION OF NEW TWEET -->
+        <section class="new-tweet">
+          <!-- Error message -->
+          <div id=error-message>
+            <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
+          <p >Invalid input</p>
           <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
-        <p >Invalid input</p>
-        <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
-      </div>
-        <!-- Form-->
-        <form action="/tweets" method="POST">
-            
-          <!-- text area to add a new tweet -->
-          <textarea
-            name="text"
-            placeholder="What are you humming about?"
-            id="tweet-text"
-          ></textarea>
-         
-          <!-- Button to add the new tweet -->
-          <div>
-            <button type="submit">TWEET</button>
-            
-            <!-- Counter -->
-            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-        </form>
-      </section>
+          <!-- Form-->
+          <form action="/tweets" method="POST">
+              
+            <!-- text area to add a new tweet -->
+            <textarea
+              name="text"
+              placeholder="What are you humming about?"
+              id="tweet-text"
+            ></textarea>
+          
+            <!-- Button to add the new tweet -->
+            <div>
+              <button type="submit">TWEET</button>
+              
+              <!-- Counter -->
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
 
-      <!-- DISPLAY OF TWEETS -->
-      <section class="tweet-container">
+        <!-- DISPLAY OF TWEETS -->
+        <section class="tweet-container">
         
-      </section>
-    </main>
+        </section>
+      </main>
+    </div> 
   </body>
 </html>

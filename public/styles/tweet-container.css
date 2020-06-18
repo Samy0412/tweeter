@@ -41,7 +41,7 @@
   font-size: 15px;
 }
 
-#tweet-recipient {
+#handle {
   color: #cccccc;
   visibility: hidden;
   font-weight: 600;
