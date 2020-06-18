@@ -3,9 +3,40 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//fake data
+// const data = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac",
+//     },
+//     content: {
+//       text:
+//         "If I have seen further it is by standing on the shoulders of giants",
+//     },
+//     created_at: 1461116232227,
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd",
+//     },
+//     content: {
+//       text: "Je pense , donc je suis",
+//     },
+//     created_at: 1461113959088,
+//   },
+// ];
 
 //create a new tweet
 const createTweetElement = function (tweet) {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   let $tweet = `
     <article>
       <header>
@@ -16,7 +47,7 @@ const createTweetElement = function (tweet) {
         <p id="tweet-recipient">${tweet.user.handle}</p>
       </header>
       <div id="tweet-display">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <footer>
         <p>${moment(tweet.created_at).fromNow()}</p>
@@ -33,8 +64,8 @@ const createTweetElement = function (tweet) {
 
 //render the Tweets on the page
 const renderTweets = function (tweets) {
-  for (let tweet of tweets) {
-    $(".tweet-container").append(createTweetElement(tweet));
+  for (let i = tweets.length - 1; i >= 0; i--) {
+    $(".tweet-container").append(createTweetElement(tweets[i]));
   }
 };
 
@@ -45,11 +76,15 @@ $(document).ready(() => {
       url: `/tweets`,
       method: "GET",
       dataType: "JSON",
-    }).then(function (response) {
-      //console.log("response:", response);
-      $("#tweet-container").empty();
-      renderTweets(response);
-    });
+    })
+      .then(function (response) {
+        //console.log("response:", response);
+        $(".tweet-container").empty();
+        renderTweets(response);
+      })
+      .catch(function (err) {
+        console.log("err:", err);
+      });
   };
   // Sending the tweet text to the server
   $("form").on("submit", function (evt) {
@@ -63,7 +98,6 @@ $(document).ready(() => {
         data: $(this).serialize(),
       })
         .then(function () {
-          $("#tweet-container").empty();
           loadTweets();
         })
         .catch(function (err) {

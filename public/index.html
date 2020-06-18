@@ -71,8 +71,15 @@
     <main class="container">
       <!-- CREATION OF NEW TWEET -->
       <section class="new-tweet">
+        <!-- Error message -->
+        <div id=error-message>
+          <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
+        <p >Invalid input</p>
+        <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
+      </div>
         <!-- Form-->
         <form action="/tweets" method="POST">
+            
           <!-- text area to add a new tweet -->
           <textarea
             name="text"
@@ -83,6 +90,7 @@
           <!-- Button to add the new tweet -->
           <div>
             <button type="submit">TWEET</button>
+            
             <!-- Counter -->
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>

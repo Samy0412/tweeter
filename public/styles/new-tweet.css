@@ -34,3 +34,22 @@
   font-family: "Bungee", cursive;
   color: #545149;
 }
+#error-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid red;
+  height: 50px;
+  width: fit-content;
+  padding: 0px 20px 0px 20px;
+}
+#error-message p {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: red;
+}
+#error-message img {
+  width: 40px;
+  height: 40px;
+}
