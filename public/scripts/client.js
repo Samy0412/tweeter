@@ -4,34 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-
-// const data = [
-//   {
-//     user: {
-//       name: "Newton",
-//       avatars: "https://i.imgur.com/73hZDYK.png",
-//       handle: "@SirIsaac",
-//     },
-//     content: {
-//       text:
-//         "If I have seen further it is by standing on the shoulders of giants",
-//     },
-//     created_at: 1461116232227,
-//   },
-//   {
-//     user: {
-//       name: "Descartes",
-//       avatars: "https://i.imgur.com/nlhLi3I.png",
-//       handle: "@rd",
-//     },
-//     content: {
-//       text: "Je pense , donc je suis",
-//     },
-//     created_at: 1461113959088,
-//   },
-// ];
-
+//create a new tweet
 const createTweetElement = function (tweet) {
   let $tweet = `
     <article>
@@ -58,6 +31,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
+//render the Tweets on the page
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
     $(".tweet-container").append(createTweetElement(tweet));
@@ -65,17 +39,23 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(() => {
-  //renderTweets(data);
-
+  //fetching the tweets from the server
+  const loadTweets = function () {
+    $.ajax({
+      url: `/tweets`,
+      method: "GET",
+      dataType: "JSON",
+    }).then(function (response) {
+      //console.log("response:", response);
+      $("#tweet-container").empty();
+      renderTweets(response);
+    });
+  };
+  // Sending the tweet text to the server
   $("form").on("submit", function (evt) {
     evt.preventDefault();
-
     const tweet = $("#tweet-text").val();
-    //console.log("data:", data);
-    //console.log($("#tweet-text").val());
-    if ($("#tweet-text").val().length < 140) {
-      alert("Invalid input!");
-    } else {
+    if (tweet && tweet.length < 140) {
       $.ajax({
         url: `/tweets`,
         method: "POST",
@@ -89,17 +69,8 @@ $(document).ready(() => {
         .catch(function (err) {
           console.log("err:", err);
         });
+    } else {
+      alert("Invalid input!");
     }
   });
-  const loadTweets = function () {
-    $.ajax({
-      url: `/tweets`,
-      method: "GET",
-      dataType: "JSON",
-    }).then(function (response) {
-      //console.log("response:", response);
-      $("#tweet-container").empty();
-      renderTweets(response);
-    });
-  };
 });
