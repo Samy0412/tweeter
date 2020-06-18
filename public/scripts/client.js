@@ -6,31 +6,31 @@
 
 // Fake data taken from initial-tweets.json
 
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text:
-        "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
+// const data = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac",
+//     },
+//     content: {
+//       text:
+//         "If I have seen further it is by standing on the shoulders of giants",
+//     },
+//     created_at: 1461116232227,
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd",
+//     },
+//     content: {
+//       text: "Je pense , donc je suis",
+//     },
+//     created_at: 1461113959088,
+//   },
+// ];
 
 const createTweetElement = function (tweet) {
   let $tweet = `
@@ -69,23 +69,37 @@ $(document).ready(() => {
 
   $("form").on("submit", function (evt) {
     evt.preventDefault();
-    // const thisObject = $(this);
-    // const data = $(this).serialize();
-    // console.log("thisObject:", thisObject);
-    // console.log("data:", data);
+
+    const tweet = $("#tweet-text").val();
+    //console.log("data:", data);
+    //console.log($("#tweet-text").val());
+    if ($("#tweet-text").val().length < 140) {
+      alert("Invalid input!");
+    } else {
+      $.ajax({
+        url: `/tweets`,
+        method: "POST",
+        // dataType: "JSON",
+        data: $(this).serialize(),
+      })
+        .then(function () {
+          $("#tweet-container").empty();
+          loadTweets();
+        })
+        .catch(function (err) {
+          console.log("err:", err);
+        });
+    }
+  });
+  const loadTweets = function () {
     $.ajax({
       url: `/tweets`,
-      method: "POST",
-      // dataType: "JSON",
-      data: $(this).serialize(),
-    })
-      .then(function () {
-        console.log("hurrah");
-        //$("#results").empty();
-        //renderTweets(response);
-      })
-      .catch(function (err) {
-        console.log("err:", err);
-      });
-  });
+      method: "GET",
+      dataType: "JSON",
+    }).then(function (response) {
+      //console.log("response:", response);
+      $("#tweet-container").empty();
+      renderTweets(response);
+    });
+  };
 });
