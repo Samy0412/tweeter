@@ -43,6 +43,7 @@
   height: 50px;
   width: fit-content;
   padding: 0px 20px 0px 20px;
+  visibility: visible;
 }
 #error-message p {
   padding-left: 20px;

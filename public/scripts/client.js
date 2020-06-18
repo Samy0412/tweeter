@@ -71,6 +71,7 @@ const renderTweets = function (tweets) {
 
 $(document).ready(() => {
   //fetching the tweets from the server
+  $("#error-message").css("visibility", "hidden");
   const loadTweets = function () {
     $.ajax({
       url: `/tweets`,
@@ -88,8 +89,12 @@ $(document).ready(() => {
   };
   // Sending the tweet text to the server
   $("form").on("submit", function (evt) {
+    $("#error-message").slideUp("slow", function () {
+      $(this).css("visibility", "visible");
+    });
     evt.preventDefault();
     const tweet = $("#tweet-text").val();
+
     if (tweet && tweet.length < 140) {
       $.ajax({
         url: `/tweets`,
@@ -104,7 +109,10 @@ $(document).ready(() => {
           console.log("err:", err);
         });
     } else {
-      alert("Invalid input!");
+      //alert("Invalid input!");
+      $("#error-message").slideDown("slow", function () {
+        $(this).css("visibility", "visible");
+      });
     }
   });
 });
