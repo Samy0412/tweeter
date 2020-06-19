@@ -18,3 +18,11 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance
 - Body-parser
 - md5
+
+## Screenshots
+
+!["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/Mains%20page%20-desktop.png?raw=true)
+!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/Main%20page-tablet.png?raw=true)
+!["tweet box"](https://github.com/Samy0412/tweeter/blob/master/docs/Tweet%20box.png?raw=true)
+!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%201.png?raw=true)
+!["Error box 2"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%202.png?raw=true)
