@@ -1,24 +1,13 @@
 //Ensure de DOM had loaded
-$(document).ready(function () {
-  // --- our code goes here ---
-  // document.addEventListener("dblclick", (event) => {
-  //   console.log(event);
-  // });
-  // document.getElementById("tweet-text").addEventListener("keydown", (event) => {
-  //   console.log(event);
-  // });
-
-  $("#tweet-text").keyup(function () {
+$(document).ready(function() {
+  $("#tweet-text").keyup(function() {
+    //Storing the length of the tweet
     const value = $(this).val().length;
-    // console.log(value);
+    //Looking for the output element that has as parent the form
     const counter = $(this).parent("form").find("output");
+    //Shows the number of characters left
     counter.val(140 - value);
-    // /if (counter.val() <= 0) {
-    //   counter.addClass("red");
-    // } else {
-    //   counter.removeClass("red");
-    // }
-
+    //Sets the color of the counter to red if it is negative
     counter.val() <= 0
       ? counter.css("color", "red")
       : counter.css("color", "#545149");
