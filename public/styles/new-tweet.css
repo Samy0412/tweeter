@@ -4,31 +4,32 @@
 .new-tweet form {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: fit-content;
+  margin-bottom: 2em;
 }
 .new-tweet textarea {
   display: flex;
   background-color: #f4f1ec;
   font-weight: 600;
-  height: 60px;
-  padding-top: 15px;
+  height: 2.5em;
+  padding-top: 0.5em;
   border: none;
   overflow: auto;
   outline: none;
   resize: none;
-  border-bottom: 4px solid #545149;
+  border-bottom: 0.15em solid #545149;
 }
 
 .new-tweet form div {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 1em;
 }
 .new-tweet button {
   background-color: #4056a1;
   color: #ffffff;
   font-family: "Bungee", cursive;
-  padding: 5px 10px 5px 10px;
+  padding: 0.25em 0.5em 0.25em 0.5em;
 }
 .new-tweet output {
   font-family: "Bungee", cursive;
@@ -39,18 +40,23 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 3px solid red;
-  height: 50px;
+  background-color: #ffcccc;
+  height: fit-content;
   width: fit-content;
-  padding: 0px 20px 0px 20px;
+  border-radius: 0.2em;
+  padding: 0 1em 0 1em;
   visibility: visible;
 }
 #error-message p {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1em;
+  padding-right: 1em;
   color: red;
 }
 #error-message img {
-  width: 40px;
-  height: 40px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.hidden {
+  display: none;
 }

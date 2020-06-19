@@ -3,32 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-//fake data
-// const data = [
-//   {
-//     user: {
-//       name: "Newton",
-//       avatars: "https://i.imgur.com/73hZDYK.png",
-//       handle: "@SirIsaac",
-//     },
-//     content: {
-//       text:
-//         "If I have seen further it is by standing on the shoulders of giants",
-//     },
-//     created_at: 1461116232227,
-//   },
-//   {
-//     user: {
-//       name: "Descartes",
-//       avatars: "https://i.imgur.com/nlhLi3I.png",
-//       handle: "@rd",
-//     },
-//     content: {
-//       text: "Je pense , donc je suis",
-//     },
-//     created_at: 1461113959088,
-//   },
-// ];
 
 //create a new tweet
 const createTweetElement = function (tweet) {
@@ -70,8 +44,9 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(() => {
+  $("#error-message").hide();
+  $("#error-message").removeClass("hidden");
   //fetching the tweets from the server
-  $("#error-message").css("visibility", "hidden");
   const loadTweets = function () {
     $.ajax({
       url: `/tweets`,
@@ -89,17 +64,22 @@ $(document).ready(() => {
   };
   // Sending the tweet text to the server
   $("form").on("submit", function (evt) {
-    $("#error-message").slideUp("slow", function () {
-      $(this).css("visibility", "visible");
-    });
+    $("#error-message").slideUp("slow");
     evt.preventDefault();
     const tweet = $("#tweet-text").val();
 
-    if (tweet && tweet.length < 140) {
+    if (!tweet) {
+      $("#error-message-text").text("The tweet cannot be empty!");
+      $("#error-message").slideDown("slow");
+    } else if (tweet.length > 140) {
+      $("#error-message-text").text(
+        "The tweet cannot be over 140 chars! sorry!"
+      );
+      $("#error-message").slideDown("slow");
+    } else {
       $.ajax({
         url: `/tweets`,
         method: "POST",
-        // dataType: "JSON",
         data: $(this).serialize(),
       })
         .then(function () {
@@ -108,11 +88,6 @@ $(document).ready(() => {
         .catch(function (err) {
           console.log("err:", err);
         });
-    } else {
-      //alert("Invalid input!");
-      $("#error-message").slideDown("slow", function () {
-        $(this).css("visibility", "visible");
-      });
     }
   });
 });

@@ -37,6 +37,12 @@ body {
  */
 /* Making the page responsive */
 
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: #c79032;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  }
+}
 @media only screen and (min-width: 1024px) {
   .responsive-container {
     display: flex;
@@ -51,5 +57,9 @@ body {
   .container {
     width: 70%;
     margin-left: 5em;
+    margin-top: 135px;
+  }
+  nav {
+    background-color: #4056a1;
   }
 }
