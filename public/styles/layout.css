@@ -32,17 +32,15 @@ body {
   margin: auto;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 /* Making the page responsive */
-
+/* Change the Nav bar color when the width is under 1024px */
 @media only screen and (max-width: 1024px) {
   nav {
-    background-color: #c79032;
+    background-color: hsl(51, 62%, 46%);
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   }
 }
+/* Displays header and main element in a row when the width is over 1024px */
 @media only screen and (min-width: 1024px) {
   .responsive-container {
     display: flex;

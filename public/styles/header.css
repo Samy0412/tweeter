@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 17em;
-  background-color: #c79032;
+  background-color: hsl(51, 62%, 46%);
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   color: #ffffff;
   margin-top: 5em; /* Add a top margin to avoid content overlay */
