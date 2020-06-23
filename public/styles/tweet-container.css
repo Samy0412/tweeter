@@ -54,6 +54,7 @@
   position: relative;
   left: 2.5%;
   border-bottom: 0.15em solid #545149;
+  word-break: break-all;
 }
 
 #tweet-images {

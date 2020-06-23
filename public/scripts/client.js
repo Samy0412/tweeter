@@ -1,9 +1,9 @@
 //HELPERS FUNCTIONS
 
 //CREATE A TWEET FUNCTION
-const createTweetElement = function(tweet) {
+const createTweetElement = function (tweet) {
   //Escape function to evaluate text coming from untrusted sources
-  const escape = function(str) {
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -34,10 +34,12 @@ const createTweetElement = function(tweet) {
 };
 
 //FUNCTION RENDERING THE TWEETS
-const renderTweets = function(tweets) {
-  for (let i = tweets.length - 1; i >= 0; i--) {
-    $(".tweet-container").append(createTweetElement(tweets[i]));
-  }
+const renderTweets = function (tweets) {
+  tweets
+    .reverse()
+    .forEach((tweet) =>
+      $(".tweet-container").append(createTweetElement(tweet))
+    );
 };
 
 //ENSSURING THAT THE DOM has loaded
@@ -45,8 +47,28 @@ $(document).ready(() => {
   //Hides the error message so that is shows up only when needed
   $("#error-message").hide();
 
+  //FETCHING THE TWEETS FROM THE SERVER
+  const loadTweets = function () {
+    $.ajax({
+      url: `/tweets`,
+      method: "GET",
+      dataType: "JSON",
+    })
+      .then(function (response) {
+        //Refreshes the list of tweets
+        $(".tweet-container").empty();
+        renderTweets(response);
+      })
+      .catch(function (err) {
+        console.log("err:", err);
+      });
+  };
+
+  //LOADS THE PREVIOUS TWEETS
+  loadTweets();
+
   // SENDING THE TWEET TEXT TO THE SERVER
-  $("form").on("submit", function(evt) {
+  $("form").on("submit", function (evt) {
     $("#error-message").slideUp("slow");
     evt.preventDefault();
     const tweet = $("#tweet-text").val();
@@ -59,6 +81,7 @@ $(document).ready(() => {
       $("#error-message-text").text(
         "The tweet cannot be over 140 chars! sorry!"
       );
+      //displays the error message with sliding movement
       $("#error-message").slideDown("slow");
     } else {
       $.ajax({
@@ -66,33 +89,17 @@ $(document).ready(() => {
         method: "POST",
         data: $(this).serialize(),
       })
-        .then(function() {
+        .then(function () {
+          //loads the tweets on the page
           loadTweets();
           //Empties the text area field after the tweets are loaded
           $("#tweet-text").val("");
           //Reset the counter to 140
           $("output").text("140");
         })
-        .catch(function(err) {
+        .catch(function (err) {
           console.log("err:", err);
         });
     }
   });
-
-  //FETCHING THE TWEETS FROM THE SERVER
-  const loadTweets = function() {
-    $.ajax({
-      url: `/tweets`,
-      method: "GET",
-      dataType: "JSON",
-    })
-      .then(function(response) {
-        //Refreshes the list of tweets
-        $(".tweet-container").empty();
-        renderTweets(response);
-      })
-      .catch(function(err) {
-        console.log("err:", err);
-      });
-  };
 });
