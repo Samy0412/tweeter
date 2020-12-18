@@ -4,6 +4,8 @@ Tweeter is a simple, single-page Twitter clone.The front end was built with usin
 
 ## Final product
 
+You can view and use the app directly here: https://tweeter-clone-sg.herokuapp.com/
+
 !["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/Mains%20page%20-desktop.png?raw=true)
 !["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/Main%20page-tablet.png?raw=true)
 !["tweet box"](https://github.com/Samy0412/tweeter/blob/master/docs/Tweet%20box.png?raw=true)
@@ -24,3 +26,7 @@ Tweeter is a simple, single-page Twitter clone.The front end was built with usin
 - Chance
 - Body-parser
 - md5
+  <<<<<<< HEAD
+  =======
+
+> > > > > > > 7a3fc146cc142c8d96893ac8568dff61bdf7ffe8
