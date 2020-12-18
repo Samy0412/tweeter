@@ -39,6 +39,9 @@ body {
     background-color: hsl(51, 62%, 46%);
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   }
+  .container {
+    margin-top: 40px;
+  }
 }
 /* Displays header and main element in a row when the width is over 1024px */
 @media only screen and (min-width: 1024px) {
@@ -55,8 +58,9 @@ body {
   .container {
     width: 70%;
     margin-left: 5em;
-    margin-top: 135px;
+    margin-top: 120px;
   }
+
   nav {
     background-color: #4056a1;
   }
