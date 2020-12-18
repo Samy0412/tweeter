@@ -10,10 +10,10 @@ This is the main page of the application.
 !["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/main-page.png?raw=true)
 
 It displays a friendly error message if the tweet is too long or if it is empty.
-!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message.png?raw=true)
 
 The application is also responsive.
-!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message.png?raw=true)
+!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/tablet-view.png?raw=true)
 
 ## Getting Started
 
@@ -28,8 +28,3 @@ The application is also responsive.
 - Node 5.10.x or above
 - Chance
 - Body-parser
-- md5
-  <<<<<<< HEAD
-  =======
-
-> > > > > > > 7a3fc146cc142c8d96893ac8568dff61bdf7ffe8
