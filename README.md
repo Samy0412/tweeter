@@ -1,8 +1,14 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone.The front end was built with using HTML, CSS, JS, jQuery and AJAX, and the back end with Node and Express.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Final product
+
+!["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/Mains%20page%20-desktop.png?raw=true)
+!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/Main%20page-tablet.png?raw=true)
+!["tweet box"](https://github.com/Samy0412/tweeter/blob/master/docs/Tweet%20box.png?raw=true)
+!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%201.png?raw=true)
+!["Error box 2"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%202.png?raw=true)
 
 ## Getting Started
 
@@ -19,10 +25,5 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-parser
 - md5
 
-## Screenshots
 
-!["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/Mains%20page%20-desktop.png?raw=true)
-!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/Main%20page-tablet.png?raw=true)
-!["tweet box"](https://github.com/Samy0412/tweeter/blob/master/docs/Tweet%20box.png?raw=true)
-!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%201.png?raw=true)
-!["Error box 2"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%202.png?raw=true)
+
