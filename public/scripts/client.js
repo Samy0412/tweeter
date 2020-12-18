@@ -69,7 +69,9 @@ $(document).ready(() => {
 
   // SENDING THE TWEET TEXT TO THE SERVER
   $("form").on("submit", function (evt) {
+    //Hiding the error message with a sliding movement
     $("#error-message").slideUp("slow");
+    //preventing the default behavior of the submit button
     evt.preventDefault();
     const tweet = $("#tweet-text").val();
     //sends error message if the field is empty
