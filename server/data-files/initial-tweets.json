@@ -1,45 +1,45 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Tim Cahill",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@TimCa"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "A journey is best measured in friends, rather than miles."
     },
-    "created_at": 1461116232227
+    "created_at": 1461113959070
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "name": "Gustave Flaubert",
+      "avatars": "https://i.imgur.com/ilT4JDe.png",
+      "handle": "@gugu"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "Travel makes one modest. You see what a tiny place you occupy in the world."
     },
     "created_at": 1461113959088
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "name": "Saint Augustine",
+      "avatars": "https://i.imgur.com/z5LNkkB.png",
+      "handle": "@Augustine"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "The world is a book, and those who do not travel read only one page."
     },
     "created_at": 1461113959088
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "name": "Ibn Battuta",
+      "avatars": "https://i.imgur.com/2WZtOD6.png",
+      "handle": "@ib"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "Traveling - it leaves you speechless, then turns you into a storyteller."
     },
     "created_at": 1461113959088
   }

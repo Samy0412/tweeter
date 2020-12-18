@@ -70,7 +70,7 @@
 }
 .round-btn__icon {
   color: white;
-  background-color: orange;
+  background-color: #a2912d;
   border-radius: 50%;
   padding: 10px;
   padding-left: 20px;
@@ -80,4 +80,7 @@
   bottom: 20px;
   right: 50px;
   z-index: 2;
+}
+.round-btn__icon:hover {
+  cursor: pointer;
 }

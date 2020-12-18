@@ -4,4 +4,9 @@ $(document).ready(function () {
     $(".new-tweet").slideDown("slow");
     $("#tweet-text").focus();
   })
+  $(".round-btn").click(function(){
+    $(window).scrollTop(0);
+    $(".new-tweet").slideDown("slow");
+    $("#tweet-text").focus();
+  })
 });
