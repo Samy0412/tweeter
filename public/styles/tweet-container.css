@@ -64,3 +64,20 @@
 #tweet-images i {
   padding: 5px;
 }
+
+.round-btn {
+  display: none;
+}
+.round-btn__icon {
+  color: white;
+  background-color: orange;
+  border-radius: 50%;
+  padding: 10px;
+  padding-left: 20px;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index: 2;
+}

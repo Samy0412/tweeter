@@ -1,5 +1,6 @@
 .new-tweet {
   margin-top: 50px;
+  visibility: visible;
 }
 .new-tweet form {
   display: flex;
@@ -7,7 +8,7 @@
   height: fit-content;
   margin-bottom: 2em;
 }
-.new-tweet textarea {
+.new-tweet input {
   display: flex;
   background-color: #f4f1ec;
   font-weight: 600;
@@ -30,6 +31,8 @@
   color: #ffffff;
   font-family: "Bungee", cursive;
   padding: 0.25em 0.5em 0.25em 0.5em;
+  border: none;
+  cursor: pointer;
 }
 .new-tweet output {
   font-family: "Bungee", cursive;

@@ -15,6 +15,10 @@ nav {
   align-items: center;
 }
 
+.write-tweet:hover {
+  cursor: pointer;
+}
+
 .label {
   font-size: 1.5em;
   padding-top: 0.5em;
@@ -23,7 +27,7 @@ nav {
 
 .write-tweet span {
   font-size: 1em;
-  align-self: center;
+  /* align-self: center; */
 }
 
 .write-tweet div {
@@ -32,4 +36,16 @@ nav {
 nav img {
   height: 1em;
   width: 1em;
+}
+
+.write-tweet a {
+  text-decoration: inherit;
+  color: white;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

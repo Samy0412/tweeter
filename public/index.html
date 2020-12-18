@@ -40,6 +40,14 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script
+      type="text/javascript"
+      src="/scripts/button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer.js"
+    ></script>
   </head>
 
   <body>
@@ -47,13 +55,15 @@
     <nav>
       <!-- Top left Tweeter logo -->
       <span class="label">tweeter</span>
-      <div class="write-tweet">
+      <div class="write-tweet" id="btn-scroll">
+        <a href="#" class="btn" title="compose tweet"> 
         <!-- Top right "write a tweet" link -->
         <span><b>Write</b> a new tweet</span>
         <!-- double red arrows image -->
         <div>
           <img src="/images/arrow-of-double-angle-pointing-down.png" />
         </div>
+      </a>
       </div>
     </nav>
     <div class= responsive-container>
@@ -79,17 +89,17 @@
           <!-- Error message -->
           <div id=error-message>
             <img src="/images/kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546.png" >
-          <p id=error-message-text></p>
+            <p id=error-message-text></p>
           </div>
           <!-- Form-->
           <form action="/tweets" method="POST">
               
             <!-- text area to add a new tweet -->
-            <textarea
+            <input
               name="text"
               placeholder="What are you humming about?"
               id="tweet-text"
-            ></textarea>
+            ></input>
           
             <!-- Button to add the new tweet -->
             <div>
@@ -105,6 +115,10 @@
         <section class="tweet-container">
         
         </section>
+
+        <div class="round-btn">
+          <i class="round-btn__icon fa fa-angle-double-up fa-2x" aria-hidden="true"></i>
+        </div>
       </main>
     </div> 
   </body>

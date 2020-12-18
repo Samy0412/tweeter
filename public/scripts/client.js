@@ -33,6 +33,8 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
+
+
 //FUNCTION RENDERING THE TWEETS
 const renderTweets = function (tweets) {
   tweets
@@ -46,6 +48,7 @@ const renderTweets = function (tweets) {
 $(document).ready(() => {
   //Hides the error message so that is shows up only when needed
   $("#error-message").hide();
+  $(".new-tweet").hide();
 
   //FETCHING THE TWEETS FROM THE SERVER
   const loadTweets = function () {
@@ -98,6 +101,8 @@ $(document).ready(() => {
           $("#tweet-text").val("");
           //Reset the counter to 140
           $("output").text("140");
+          //hiding the composer again
+          $(".new-tweet").slideUp("slow");
         })
         .catch(function (err) {
           console.log("err:", err);
