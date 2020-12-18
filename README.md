@@ -6,11 +6,14 @@ Tweeter is a simple, single-page Twitter clone.The front end was built with usin
 
 You can view and use the app directly here: https://tweeter-clone-sg.herokuapp.com/
 
-!["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/Mains%20page%20-desktop.png?raw=true)
-!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/Main%20page-tablet.png?raw=true)
-!["tweet box"](https://github.com/Samy0412/tweeter/blob/master/docs/Tweet%20box.png?raw=true)
-!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%201.png?raw=true)
-!["Error box 2"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message%202.png?raw=true)
+This is the main page of the application.
+!["main page on desktop"](https://github.com/Samy0412/tweeter/blob/master/docs/main-page.png?raw=true)
+
+It displays a friendly error message if the tweet is too long or if it is empty.
+!["Error box 1"](https://github.com/Samy0412/tweeter/blob/master/docs/tablet-view.png?raw=true)
+
+The application is also responsive.
+!["main page on tablet"](https://github.com/Samy0412/tweeter/blob/master/docs/error-message.png?raw=true)
 
 ## Getting Started
 
